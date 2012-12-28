@@ -3,8 +3,7 @@
 <head> 
 <!-- TUMBLR APPEARANCE OPTIONS -->
 <!-- General -->
-<meta name="text:Google Analytics UA Code" content="" /> 
-<meta name="image:Background" content="http://static.tumblr.com/vv8cdma/Ddzm1ypam/chruch.png" />
+<meta name="text:GoogleAnalyticsUACode" content="" /> 
 <meta name="text:Application Stylesheet URL" content="" />
 <meta name="if:Show Description On Index" content="1" />
 <meta name="if:Use Responsive Styles" content="1" />
@@ -49,7 +48,6 @@
 /* --- high-level --- */
 body { 
   padding-top: 60px; /* room for fixed nav-bar */
-  background-image: url('{image:Background}'); 
 } 
 {block:IfUseResponsiveStyles}
 @media (max-width:979px) {
@@ -112,7 +110,7 @@ body {
 <script type="text/javascript">
 
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', '{text:Google Analytics UA Code}']);
+_gaq.push(['_setAccount', '{text:GoogleAnalyticsUACode}']);
 _gaq.push(['_trackPageview']);
 
 (function() {
@@ -589,7 +587,6 @@ fjs.parentNode.insertBefore(js, fjs);
 
   <footer class="footer">
     <p class="pull-right"><a href="#">Back to top</a></p>
-    <p><a href="https://github.com/mikejarema/bootstrap-tumblr-theme/">Bootstrap Tumblr Theme</a> by <a href="http://mikejarema.com">Mike Jarema</a>.</p>
     <p>{lang:Powered by Tumblr 2}.</p>
   </footer>
 
