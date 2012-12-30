@@ -3,10 +3,9 @@
 <head> 
 <!-- TUMBLR APPEARANCE OPTIONS -->
 <!-- General -->
-<meta name="text:GoogleAnalyticsUACode" content="" /> 
+<meta name="text:Google Analytics UA Code" content="" />
 <meta name="text:Application Stylesheet URL" content="" />
 <meta name="if:Show Description On Index" content="1" />
-<meta name="if:Use Responsive Styles" content="1" />
 
 <!-- Sharing Buttons -->
 <meta name="if:Show Tweet Button" content="1"/>
@@ -31,14 +30,9 @@
 
 <title>{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}{block:Pagination} - {lang:Page CurrentPage of TotalPages}{/block:Pagination}</title> 
 
-<!-- ======== STYLES ======== -->
+<!-- ======== STYLES use cosmo theme ======== -->
 
-{block:IfUseResponsiveStyles}
-<link href="http://static.tumblr.com/vv8cdma/X49m6e0kl/bootstrap.min.css" rel="stylesheet">
-{/block:IfUseResponsiveStyles}
-{block:IfNotUseResponsiveStyles}
-<link href="http://static.tumblr.com/vv8cdma/dtnm6e0lb/bootstrap.min.css" rel="stylesheet">
-{/block:IfNotUseResponsiveStyles}
+<link href="//netdna.bootstrapcdn.com/bootswatch/2.1.1/cosmo/bootstrap.min.css" rel="stylesheet">
 
 <!-- Font Awesome - http://fortawesome.github.com/Font-Awesome -->
 <link href="http://static.tumblr.com/vv8cdma/c18m6e0y9/font-awesome.css" rel="stylesheet">
@@ -110,7 +104,7 @@ body {
 <script type="text/javascript">
 
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', '{text:GoogleAnalyticsUACode}']);
+_gaq.push(['_setAccount', '{text:Google Analytics UA Code}']);
 _gaq.push(['_trackPageview']);
 
 (function() {
@@ -224,10 +218,8 @@ fjs.parentNode.insertBefore(js, fjs);
 
   {block:IndexPage}
   {block:IfShowDescriptionOnIndex}
-  <div class="hero-unit">
-    <h1>{Title}</h1>
-    <p>{Description}</p>
-  </div>
+  <h1>{Title}</h1>
+  <p>{Description}</p>
   {/block:IfShowDescriptionOnIndex}
   {/block:IndexPage}
 
