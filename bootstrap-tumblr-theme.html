@@ -42,29 +42,35 @@
 /* --- high-level --- */
 body { 
   padding-top: 60px; /* room for fixed nav-bar */
-  font-family: inherit, Helvetica, Arial, Verdana, 'ƒqƒ‰ƒMƒmŠpƒS ProN W3', 'Hiragino Kaku Gothic ProN', 'ƒƒCƒŠƒI', Meiryo, '‚l‚r ‚oƒSƒVƒbƒN', 'MS PGothic', sans-serif;
+  font-family: Helvetica, Arial, Verdana, 'ƒqƒ‰ƒMƒmŠpƒS ProN W3', 'Hiragino Kaku Gothic ProN', 'ƒƒCƒŠƒI', Meiryo, '‚l‚r ‚oƒSƒVƒbƒN', 'MS PGothic', sans-serif;
   font-size: 14px;
   line-height: 1.3;
   font-weight: normal;
   background-color: whiteSmoke;
 } 
-{block:IfUseResponsiveStyles}
-@media (max-width:979px) {
-  body {
-    padding-top: 0;
-  }
+
+/* --- navbar --- */
+.navbar {
+  line-height: 100%;
 }
-{/block:IfUseResponsiveStyles}
 
 /* --- footer --- */
 .footer {
   background-color: white;
-
   padding: 40px 0;
   text-align: center;
   margin-top: 40px;
   color: #777;
 }
+
+/* --- blog title --- */
+#blog_title_container {
+  margin: 10px 0 30px;
+}
+#blog_title {
+  font-size: 50px;
+}
+
 /* --- tags --- */
 .tags { margin-bottom: 10px;}
 .tag { margin-bottom: 5px;}
@@ -232,8 +238,10 @@ fjs.parentNode.insertBefore(js, fjs);
 
   {block:IndexPage}
   {block:IfShowDescriptionOnIndex}
-  <h1>{Title}</h1>
-  <p>{Description}</p>
+  <div id="blog_title_container">
+    <div id="blog_title">{Title}</div>
+    <div>{Description}</div>
+  </div>
   {/block:IfShowDescriptionOnIndex}
   {/block:IndexPage}
 
