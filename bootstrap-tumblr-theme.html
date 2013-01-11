@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head> 
+
 <!-- TUMBLR APPEARANCE OPTIONS -->
 <!-- General -->
 <meta name="text:Google Analytics UA Code" content="" />
@@ -49,6 +50,10 @@ body {
   background-color: whiteSmoke;
 }
 
+h1 {
+  font-size: 26px;
+}
+
 @media (min-width: 1200px) {
   .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
     width: 1170px;
@@ -81,10 +86,33 @@ body {
 .tags { margin-bottom: 10px;}
 .tag { margin-bottom: 5px;}
 
+/* --- date --- */
+.date {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size:18px;
+    line-height:100%;
+}
+
+.date div span {
+    font-size:45%;
+    padding-left: 5px;
+}
+
+.date-year {
+    font-size: 70%;
+}
+
+/* --- adsense --- */
+.adsense {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
 /* --- entry --- */
-.entry { background-color: white; border-radius: 5px; padding-top: 20px; padding-bottom: 20px; position: relative; }
-.entry > * { padding-left: 20px; padding-right: 20px; }
-.date { margin-bottom: 10px; }
+.entry { background-color: white; border-radius: 5px; padding-top: 20px; padding-bottom: 20px; position: relative; margin-bottom: 20px;}
+.entry > * { padding-left: 20px; padding-right: 20px;}
 .entry .title { margin-bottom: 10px; }
 .entry h2:first-of-type { margin-top: 0; }
 .entry h2 { margin-top: 20px; }
@@ -96,7 +124,9 @@ body {
 }  
 
 /* --- author --- */
-
+#author {
+  text-align: center;
+}
 /* --- notes and comments --- */
 .notes-container, .comments-container { background-color: white; border-radius: 5px; position: relative; margin-top: 20px; }
 .notes-container .notes, .comments-container #disqus_thread { padding: 20px; margin: 0; }
@@ -148,7 +178,7 @@ fjs.parentNode.insertBefore(js, fjs);
 {/block:IfShowLikeButton}
 
 <header>
-  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
 
@@ -275,82 +305,30 @@ fjs.parentNode.insertBefore(js, fjs);
         {block:Posts}
         <div class="row-fluid post {block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Quote}quote{/block:Quote}{block:Video}video{/block:Video}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Audio}audio{/block:Audio}{block:Answer}answer{/block:Answer}">  
 
-          <div class="span3">
-            <div class="date">
+          <div class="span1">
+            <div class="date badge badge-inverse">
               {block:Date}
               {block:NotReblog}
-              <a href="{Permalink}">{lang:Posted TimeAgo}</a>
+              <div class="date-month">{ShortMonth}</div>
+              <div class="date-day">{DayOfMonthWithZero}</div>
+              <div class="date-year">{Year}<span></span></div>
               {/block:NotReblog}
-              {block:Reblog}
-              {lang:PostTypeNoun reblogged from ReblogParentTitle 2}
-              {/block:Reblog}
               {/block:Date}
-
-              {block:HasTags}
-              with tags:
-              {/block:HasTags}
             </div> <!-- .date -->
-
-            {block:HasTags}
-            <div class="tags">
-              {block:Tags}
-              <a class="tag btn btn-mini" href="{TagURL}">{Tag}</a>
-              {/block:Tags}
-            </div> <!-- .tags -->
-            {/block:HasTags}
-
-            {block:NoteCount} 
-            <div class="notes">
-              <a href="{Permalink}#notes">
-                <i class="icon-heart"></i> {NoteCountWithLabel}
-              </a>
-            </div>
-            {/block:NoteCount} 
-
-            {block:IfDisqusShortname}
-            <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>
-            {/block:IfDisqusShortname}
-
-            <div class="share-links">
-              {block:IfShowTweetButton}
-              <div class="tweet share-link">
-                <a href="https://twitter.com/share" 
-                  class="twitter-share-button" 
-                  data-url="{PlaintextPermalink}" 
-                  data-text="{PlaintextTitle}" 
-                  {block:IfTweetViaAccount}
-                  data-via="{PlaintextTweetViaAccount}" 
-                  {/block:IfTweetViaAccount}
-                  {block:IfTweetFollowAccount}
-                  data-related="{PlaintextTweetFollowAccount}" 
-                  {/block:IfTweetFollowAccount}
-                  >Tweet</a>
-              </div>
-              {/block:IfShowTweetButton}
-
-              {block:IfShowLikeButton}
-              <div class="like share-link">
-                <div class="fb-like" data-href="{PlaintextPermalink}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="lucida grande"></div>
-              </div>
-              {/block:IfShowLikeButton}
-            </div> <!-- .share-links -->
 
           </div> <!-- .span2 -->
 
-          <div class="span9 entry">
-
-            {block:GroupMembers} 
-            <div class="speech-bubble"></div>
-            {/block:GroupMembers} 
+          <div class="span11">
+          <div class="entry">
 
             <div class="title">
 
               {block:Title}
-              <h2>
+              <h1>
                 <a href="{Permalink}">
                   {Title}
                 </a>
-              </h2>
+              </h1>
               {/block:Title}
 
             </div> <!-- .title -->
@@ -387,9 +365,7 @@ fjs.parentNode.insertBefore(js, fjs);
               <!-- TEXT -->
 
               {block:Text}
-
               {Body}
-
               {/block:Text}
 
               <!-- /TEXT -->
@@ -549,6 +525,31 @@ fjs.parentNode.insertBefore(js, fjs);
 
           </div> <!-- .entry -->
 
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a class="tag btn btn-mini" href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+            </div> <!-- .tags -->
+            {/block:HasTags}
+
+            {block:NoteCount} 
+            <div class="notes">
+              <a href="{Permalink}#notes">
+                <i class="icon-heart"></i> {NoteCountWithLabel}
+              </a>
+            </div>
+            {/block:NoteCount} 
+
+            {block:IfDisqusShortname}
+            <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>
+            {/block:IfDisqusShortname}
+
+        </div>
+
+
+
+
         </div> <!-- .row .post -->
 
         {block:PermalinkPagination} 
@@ -571,6 +572,7 @@ fjs.parentNode.insertBefore(js, fjs);
         </div>
         {/block:NoteCount}
 
+
         <hr/>
 
         {/block:Posts}
@@ -580,12 +582,25 @@ fjs.parentNode.insertBefore(js, fjs);
 
     <div class="span3">
             {block:GroupMembers} 
-            <div class="author">
-                <img src="{PortraitURL-128}" class="thumbnail">
+            <div id="author">
               <div class="author-name"><span class="attribution">Posted by</span><br/><a href="{PostAuthorURL}" target="_blank">{PostAuthorTitle}</a></div>
+              <img src="{PortraitURL-128}">
               <div style="clear: both"></div>
             </div>
             {/block:GroupMembers} 
+            <div class="adsense">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9609502338106476";
+/* tumblr */
+google_ad_slot = "5058278672";
+google_ad_width = 180;
+google_ad_height = 150;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+            </div>
     </div>
 
   </div>
