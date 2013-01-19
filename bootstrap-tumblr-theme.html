@@ -3,24 +3,10 @@
 <head> 
 
 <!-- TUMBLR APPEARANCE OPTIONS -->
-<!-- General -->
 <meta name="text:Google Analytics UA Code" content="" />
-<meta name="text:Application Stylesheet URL" content="" />
-<meta name="if:Show Description On Index" content="1" />
-
-<!-- Sharing Buttons -->
-<meta name="if:Show Tweet Button" content="1"/>
-<meta name="text:Tweet Via Account" content=""/>
-<meta name="text:Tweet Follow Account" content=""/>
-<meta name="if:Show Like Button" content="1"/>
-
-<!-- Accompanying App? -->
-<meta name="if:Link Logo To Application" content="0" />
-<meta name="text:Application URL" content="" />
-
-<!-- Comments -->
+<meta name="text:Widgets Code1" content="" />
+<meta name="text:Widgets Code2" content="" />
 <meta name="text:Disqus Shortname" content=""/>
-
 <!-- END TUMBLR APPEARANCE OPTIONS -->
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
@@ -32,14 +18,12 @@
 <title>{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}{block:Pagination} - {lang:Page CurrentPage of TotalPages}{/block:Pagination}</title> 
 
 <!-- ======== STYLES use cosmo theme ======== -->
-
 <link href="//netdna.bootstrapcdn.com/bootswatch/2.1.1/cosmo/bootstrap.min.css" rel="stylesheet">
 
 <!-- Font Awesome - http://fortawesome.github.com/Font-Awesome -->
 <link href="http://static.tumblr.com/vv8cdma/c18m6e0y9/font-awesome.css" rel="stylesheet">
 
 <style type="text/css">
-
 /* --- high-level --- */
 body { 
   padding-top: 60px; /* room for fixed nav-bar */
@@ -52,12 +36,6 @@ body {
 
 h1 {
   font-size: 26px;
-}
-
-@media (min-width: 1200px) {
-  .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-    width: 1170px;
-  } 
 }
 
 /* --- navbar --- */
@@ -88,40 +66,28 @@ h1 {
 
 /* --- date --- */
 .date {
-    margin-bottom: 10px;
-    text-align: center;
-    font-size:18px;
-    line-height:100%;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size:18px;
+  line-height:100%;
 }
 
 .date div span {
-    font-size:45%;
-    padding-left: 5px;
+  font-size:45%;
+  padding-left: 5px;
 }
 
 .date-year {
-    font-size: 70%;
+  font-size: 70%;
 }
-
-/* --- adsense --- */
-.adsense {
-  text-align: center;
-  margin: 20px 0;
-}
-
 
 /* --- entry --- */
-.entry { background-color: white; border-radius: 5px; padding-top: 20px; padding-bottom: 20px; position: relative; margin-bottom: 20px;}
+.entry { background-color: white; border-radius: 5px; padding-top: 10px; padding-bottom: 20px; position: relative; margin-bottom: 20px;}
 .entry > * { padding-left: 20px; padding-right: 20px;}
 .entry .title { margin-bottom: 10px; }
-.entry h2:first-of-type { margin-top: 0; }
-.entry h2 { margin-top: 20px; }
 
 /* --- speech bubble: visually connects entries to authors --- */ 
 .speech-bubble { background-image: url(http://static.tumblr.com/vv8cdma/4AAm155zf/speech-bubble.png); width: 16px; height: 16px; position: absolute; padding: 0; left: -16px; top: 16px; }
-@media (max-width: 980px) { 
-  .speech-bubble { display: none; }
-}  
 
 /* --- author --- */
 #author {
@@ -137,11 +103,6 @@ h1 {
 
 </style>
 
-{block:IfApplicationStylesheetURL}
-<!-- Import application styling -->
-<link href="{text:Application Stylesheet URL}" rel="stylesheet">
-{/block:IfApplicationStylesheetURL}
-
 <style type="text/css">
 <!--
 {CustomCSS}
@@ -150,33 +111,18 @@ h1 {
 
 {block:IfGoogleAnalyticsUACode}
 <script type="text/javascript">
-
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', '{text:Google Analytics UA Code}']);
 _gaq.push(['_trackPageview']);
-
 (function() {
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-
 </script>
 {/block:IfGoogleAnalyticsUACode}
 </head> 
 <body>
-
-{block:IfShowLikeButton}
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=325405900855984";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-{/block:IfShowLikeButton}
-
 <header>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -188,12 +134,7 @@ fjs.parentNode.insertBefore(js, fjs);
           <span class="icon-bar"></span>
         </a>
 
-        <a class="brand" 
-          {block:IfLinkLogoToApplication}href="{text:Application URL}"{/block:IfLinkLogoToApplication} 
-          {block:IfNotLinkLogoToApplication}href="/"{/block:IfNotLinkLogoToApplication} 
-          >
-          {Title}
-        </a>
+        <a class="brand" href="/" >{Title}</a>
 
         <div class="nav-collapse">
           <ul class="nav">
@@ -263,7 +204,6 @@ fjs.parentNode.insertBefore(js, fjs);
 
 
 <div class="container">
-
   {block:IndexPage}
   {block:IfShowDescriptionOnIndex}
   <div id="blog_title_container">
@@ -319,211 +259,211 @@ fjs.parentNode.insertBefore(js, fjs);
           </div> <!-- .span2 -->
 
           <div class="span11">
-          <div class="entry">
+            <div class="entry">
 
-            <div class="title">
+              <div class="title">
 
-              {block:Title}
-              <h1>
-                <a href="{Permalink}">
-                  {Title}
-                </a>
-              </h1>
-              {/block:Title}
+                {block:Title}
+                <h1>
+                  <a href="{Permalink}">
+                    {Title}
+                  </a>
+                </h1>
+                {/block:Title}
 
-            </div> <!-- .title -->
+              </div> <!-- .title -->
 
-            <div class="POST">
+              <div class="POST">
 
-              <!-- ANSWER -->
+                <!-- ANSWER -->
 
-              {block:Answer}
+                {block:Answer}
 
-              <div class="QUOTEINFO">
+                <div class="QUOTEINFO">
 
-                <div class="QUOTEMARK"></div>
-                <div class="TEXT">
-                  {Question}
+                  <div class="QUOTEMARK"></div>
+                  <div class="TEXT">
+                    {Question}
+                  </div>
+
                 </div>
 
-              </div>
+                <p>{lang:Asked by Asker}</p>
 
-              <p>{lang:Asked by Asker}</p>
+                <div class="BREAK"></div>
 
-              <div class="BREAK"></div>
+                <div class="RESPONSE">
 
-              <div class="RESPONSE">
+                  {Answer}
 
-                {Answer}
+                </div>
 
-              </div>
+                {/block:Answer}
 
-              {/block:Answer}
+                <!-- /ANSWER -->
 
-              <!-- /ANSWER -->
+                <!-- TEXT -->
 
-              <!-- TEXT -->
+                {block:Text}
+                {Body}
+                {/block:Text}
 
-              {block:Text}
-              {Body}
-              {/block:Text}
+                <!-- /TEXT -->
 
-              <!-- /TEXT -->
+                <!-- VIDEO -->
 
-              <!-- VIDEO -->
+                {block:Video}
 
-              {block:Video}
+                {Video-500}
 
-              {Video-500}
-
-              {block:Caption}
-              {Caption}
-              {/block:Caption}
-
-              {/block:Video}
-
-              <!-- /VIDEO -->
-
-              <!-- PHOTO -->
-
-              {block:Photo}
-
-              <div class="CENTER">
-
-                {LinkOpenTag}<img alt="{PhotoAlt}" src="{PhotoURL-500}" />{LinkCloseTag}
-
-              </div>
-
-              {block:Caption}
-              <div class="CAPTION">
+                {block:Caption}
                 {Caption}
-              </div>
-              {/block:Caption}
+                {/block:Caption}
 
-              {/block:Photo}
+                {/block:Video}
 
-              <!-- /PHOTO -->
+                <!-- /VIDEO -->
 
-              <!-- QUOTE -->
+                <!-- PHOTO -->
 
-              {block:Quote}
+                {block:Photo}
 
-              <div class="QUOTEINFO">
+                <div class="CENTER">
 
-                <div class="QUOTEMARK"></div>
-                <div class="TEXT">
-                  {Quote}
-                </div>
-
-              </div>
-
-              <div class="BREAK"></div>
-
-              {block:Source}
-              <div class="BY">
-
-                {Source}
-
-              </div>
-              {/block:Source}
-
-              {/block:Quote}
-
-              <!-- /QUOTE -->
-
-              <!-- LINK -->
-
-              {block:Link}
-
-              <div class="THE-LINK">
-
-                <a href="{URL}" target="{Target}">{Name}</a>
-
-              </div>
-
-              <div class="INFO">
-                <a href="{URL}" target="{Target}">
-                  {URL}
-                </a>
-              </div>
-
-              {block:Description}         
-              <div class="MARGIN">{Description}</div>
-              {/block:Description}
-
-              {/block:Link}
-
-              <!-- /LINK -->
-
-              <!-- CHAT -->
-
-              {block:Chat}
-
-              <ul class="CHAT">
-
-                {block:Lines}
-                <li class="{Alt} {UserNumber}">{block:Label}<strong>{Label}</strong> {/block:Label}{Line}</li>
-                {/block:Lines}
-
-              </ul>
-
-              {/block:Chat}
-
-              <!-- /CHAT -->
-
-              <!-- AUDIO -->
-
-              {block:Audio}
-
-              <div class="PLAYER">
-
-                <div class="ALBUMART">
-
-                  {block:AlbumArt}<img  alt="" src="{AlbumArtURL}" />{/block:AlbumArt}
+                  {LinkOpenTag}<img alt="{PhotoAlt}" src="{PhotoURL-500}" />{LinkCloseTag}
 
                 </div>
 
-                <div class="OVERLAY">
+                {block:Caption}
+                <div class="CAPTION">
+                  {Caption}
+                </div>
+                {/block:Caption}
 
-                  <div class="OBJ">
-                    {AudioPlayerGrey}
-                  </div>
+                {/block:Photo}
 
-                  <div class="COUNT">
-                    This track has had {PlayCountWithLabel}
-                  </div>
+                <!-- /PHOTO -->
 
-                  <div class="TRACK">
-                    {block:TrackName}
-                    <strong>{TrackName}</strong>
-                    {/block:TrackName}
+                <!-- QUOTE -->
 
-                    {block:TrackName}
-                    {block:Artist}
-                    by
-                    {/block:Artist}
-                    {/block:TrackName}
+                {block:Quote}
 
-                    {block:Artist}
-                    <a href="http://last.fm/{Artist}">{Artist}</a>
-                    {/block:Artist}
+                <div class="QUOTEINFO">
+
+                  <div class="QUOTEMARK"></div>
+                  <div class="TEXT">
+                    {Quote}
                   </div>
 
                 </div>
 
+                <div class="BREAK"></div>
+
+                {block:Source}
+                <div class="BY">
+
+                  {Source}
+
+                </div>
+                {/block:Source}
+
+                {/block:Quote}
+
+                <!-- /QUOTE -->
+
+                <!-- LINK -->
+
+                {block:Link}
+
+                <div class="THE-LINK">
+
+                  <a href="{URL}" target="{Target}">{Name}</a>
+
+                </div>
+
+                <div class="INFO">
+                  <a href="{URL}" target="{Target}">
+                    {URL}
+                  </a>
+                </div>
+
+                {block:Description}         
+                <div class="MARGIN">{Description}</div>
+                {/block:Description}
+
+                {/block:Link}
+
+                <!-- /LINK -->
+
+                <!-- CHAT -->
+
+                {block:Chat}
+
+                <ul class="CHAT">
+
+                  {block:Lines}
+                  <li class="{Alt} {UserNumber}">{block:Label}<strong>{Label}</strong> {/block:Label}{Line}</li>
+                  {/block:Lines}
+
+                </ul>
+
+                {/block:Chat}
+
+                <!-- /CHAT -->
+
+                <!-- AUDIO -->
+
+                {block:Audio}
+
+                <div class="PLAYER">
+
+                  <div class="ALBUMART">
+
+                    {block:AlbumArt}<img  alt="" src="{AlbumArtURL}" />{/block:AlbumArt}
+
+                  </div>
+
+                  <div class="OVERLAY">
+
+                    <div class="OBJ">
+                      {AudioPlayerGrey}
+                    </div>
+
+                    <div class="COUNT">
+                      This track has had {PlayCountWithLabel}
+                    </div>
+
+                    <div class="TRACK">
+                      {block:TrackName}
+                      <strong>{TrackName}</strong>
+                      {/block:TrackName}
+
+                      {block:TrackName}
+                      {block:Artist}
+                      by
+                      {/block:Artist}
+                      {/block:TrackName}
+
+                      {block:Artist}
+                      <a href="http://last.fm/{Artist}">{Artist}</a>
+                      {/block:Artist}
+                    </div>
+
+                  </div>
+
+                </div>
+
+                {block:Caption}
+                {Caption}
+                {/block:Caption}
+
+                {/block:Audio}
+
+                <!-- /AUDIO -->   
+
               </div>
 
-              {block:Caption}
-              {Caption}
-              {/block:Caption}
-
-              {/block:Audio}
-
-              <!-- /AUDIO -->   
-
-            </div>
-
-          </div> <!-- .entry -->
+            </div> <!-- .entry -->
 
             {block:HasTags}
             <div class="tags">
@@ -545,24 +485,25 @@ fjs.parentNode.insertBefore(js, fjs);
             <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>
             {/block:IfDisqusShortname}
 
-        </div>
+            {block:PermalinkPagination} 
 
+            {block:IfWidgetsCode1}
+            <div class="widgets">{text:Widgets Code1}</div>
+            {/block:IfWidgetsCode1}
 
+            {block:IfWidgetsCode2}
+            <div class="widgets">{text:Widgets Code2}</div>
+            {/block:IfWidgetsCode2}
 
-
-        </div> <!-- .row .post -->
-
-        {block:PermalinkPagination} 
-        {block:IfDisqusShortname}
-        <div class="row">
-          <div class="span10 offset2 comments-container">
+            {block:IfDisqusShortname}
             <div id="disqus_thread"></div>
             <script type="text/javascript" src="http://{text:Disqus Shortname}.disqus.com/embed.js"></script>
             <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
-          </div> <!-- .comments-container -->
-        </div>
-        {/block:IfDisqusShortname}
-        {/block:PermalinkPagination} 
+            {/block:IfDisqusShortname}
+            {/block:PermalinkPagination} 
+          </div>
+        </div> <!-- .row .post -->
+
 
         {block:NoteCount}
         <div class="row">
@@ -571,36 +512,20 @@ fjs.parentNode.insertBefore(js, fjs);
           </div> <!-- .notes-container -->
         </div>
         {/block:NoteCount}
-
-
         <hr/>
-
         {/block:Posts}
 
       </div> <!-- .posts -->
     </div>
 
     <div class="span3">
-            {block:GroupMembers} 
-            <div id="author">
-              <div class="author-name"><span class="attribution">Posted by</span><br/><a href="{PostAuthorURL}" target="_blank">{PostAuthorTitle}</a></div>
-              <img src="{PortraitURL-128}">
-              <div style="clear: both"></div>
-            </div>
-            {/block:GroupMembers} 
-            <div class="adsense">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-9609502338106476";
-/* tumblr */
-google_ad_slot = "5058278672";
-google_ad_width = 180;
-google_ad_height = 150;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-            </div>
+      {block:GroupMembers} 
+      <div id="author">
+        <div class="author-name"><a href="{PostAuthorURL}" target="_blank">{PostAuthorTitle}</a></div>
+        <img src="{PortraitURL-128}">
+        <div style="clear: both"></div>
+      </div>
+      {/block:GroupMembers} 
     </div>
 
   </div>
@@ -617,20 +542,15 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   </ul>
   {/block:Pagination}
 </div>
+</div>
 <footer class="footer">
-  <p>{lang:Powered by Tumblr 2}.</p>
+<p>{lang:Powered by Tumblr 2}.</p>
 </footer>
 
 
 <!-- ======== SCRIPTS ======== -->
-
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/vv8cdma/1HKm6e0ok/bootstrap.min.js"></script>    
-
-{block:IfShowTweetButton}
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-{/block:IfShowTweetButton}
-
 {block:IfDisqusShortname}
 <script type="text/javascript">
 //<![CDATA[
