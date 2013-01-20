@@ -1,43 +1,75 @@
-# Bootstrap Tumblr Theme
+# Bootstrap Base Tumblr Theme
+Tumblr用に作成した[Bootstrap](http://twitter.github.com/bootstrap/)をベースにしたテーマです。  
+このテーマは[mikejarema/bootstrap-tumblr-theme ・ GitHub](https://github.com/mikejarema/bootstrap-tumblr-theme) をフォークして作成しております。
 
-*Install this theme on your Tumblr using this link: http://www.tumblr.com/theme/34547*
+## 概要
 
-*I'll be sure to keep the theme up-to-date with the most recent code. Install it to automatically keep up with future developments.*
+* Bootstrapは、Version 2.2.2を利用しております。
+* ヘッダー、フッター、ボディ(3カラム)の構成となっております。
+* テキストの投稿をメインに考えて作成しております。
 
-![Preview](http://media.tumblr.com/themes/wide/UMTdXwnhRgL3KYUh.png)
+## ページ詳細
+
+### ヘッダー
+* ブログタイトル、フォローへのリンク、アーカイブへのリンク、検索があります。
+* インデックスページのみ、ヘッダー下にブログタイトル、説明が表示されます。
+
+### ボディ(左サイド)
+* POSTした日付がボタンで表示されます。クリックで個別ページに移動します。
+* 個別ページでは、設定された各種シェアボタンが表示されます。ボタンは以下です。
+** Tumblr
+** Twitter
+** はてなブックマーク
+** Facebook
+** google+1
+** Buffer
+
+### ボディ(メイン)
+#### インデックスページ、個別ページ共通
+* POSTしたタイトル、内容が表示されます。
+* 内容カラムの下に、タグカラムがあります。
+
+#### インデックスページのみ
+* インデックスページにのみ、Disqusのコメント数が表示されます。
+* インデックスページにのみ、PostNotes件数が表示されます。
+
+#### 個別ページのみ
+* ウィジェット1で入力された内容
+* Disqusのコメント詳細
+* ウィジェット2で入力された内容
+* PostNotes詳細
+
+※ コメントを挟み込む様な形でウィジェットエリアを設けております。
+
+### ボディ(右カラム)
+* プロフィール写真 128px
+* 設定したFollow on Tumblrボタン
+* 設定したSNSへのリンクアイコン
+
+### フッタ
+Tumblr、Bootstrap、テーマのGithubページへのリンク
 
 
-## Overview
+## 使い方
 
-**What**: A Tumblr theme built on top of Twitter's Bootstrap framework (v2.x), with Font Awesome icons.
+1. bootstrap-tumblr-theme.htmlの内容をコピーして下さい。
+2. [カスタマイズ | Tumblr](http://www.tumblr.com/customize)に移動して下さい。
+3. カスタムテーマの「HTMLを編集」をクリックして、1.でコピーした内容を貼り付けて下さい。
+4. 上部の「保存」、「閉じる」をクリックして下さい。
+5. 再度、[カスタマイズ | Tumblr](http://www.tumblr.com/customize)に移動して下さい。
+6. デザイン設定の各種項目を設定して下さい。
 
-**Why**: To minimize the effort required to maintain consistent designs on both a Bootstrap-based web app and its blog.
+## 設定項目
 
-**How**: Borrowed the overall structure from the awesome Royal Ribbon theme, and rebuilt it using Bootstrap markup and styles.
+### テキスト項目
+**Google Webmaster Tool Code** - Googleウェブマスター用のコードを入力して下さい。google-site-verificationのメタ要素のcontentに入力した内容が反映されます。
+**Google Analytics UA Code** - Google AnalyticsのUA Codeを入力してください。
+**Disqus Shortname** - DisqusのShortnameを入力してください。
+**Follow Tumblelog** - Tumblelogを入力してください。入力されると{Follow on Tumblr}ボタンが表示されます。
 
-
-## Details
-
-This theme provides a very basic and barebones framework within which to apply your own styles.  Typically this involves linking to your web app's existing stylesheet, then applying further custom CSS to polish off the integration with Tumblr.
-
-By default this theme uses Bootstrap's responsive styles, so it should look sexy across devices and form factors. This is optionally disabled via Tumblr's appearance options.
-
-Of course the devil is in the details, so be sure to tweak for your needs.
-
-
-## Usage
-
-This theme can be installed via Tumblr's theme gallery: http://www.tumblr.com/theme/34547
-
-Take a look at the available configuration variables, particularly the **Application Stylesheet** which lets you pull in any of your existing Bootstrap styles.
-
-Tweaks and modifications to the markup can be made as follows:
-
-* ``http://www.tumblr.com/customize/<your-blog>``
-* Click ``Edit HTML``
-* Tweak to your satisfaction using familiar Bootstrap styles and structure
-* Save and start posting!
-
+**Widgets Code1** - Widgets用です。スクリプトタグ等を入力して下さい。 Disqusコメント上部に表示されます。
+**Widgets Code2** - Widgets用です。スクリプトタグ等を入力して下さい。 Disqusコメント下部に表示されます。
+ウィジェットはZenbackなどの利用を想定しております。
 
 ## Configuration Variables
 

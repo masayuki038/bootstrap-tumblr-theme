@@ -1,0 +1,124 @@
+/* --- high-level --- */
+body { 
+  padding-top: 60px; /* room for fixed nav-bar */
+  font-family: Helvetica, Arial, Verdana, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: normal;
+  background-color: whiteSmoke;
+}
+h1 {
+  font-size: 26px;
+}
+.container {
+  width: 1170px;
+}
+/* --- navbar --- */
+.navbar {
+  line-height: 100%;
+}
+/* --- footer --- */
+.footer {
+  background-color: white;
+  padding: 40px 0;
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+}
+/* --- blog title --- */
+#blog_title_container {
+  margin: 10px 0 30px;
+}
+
+#blog_title_title {
+font-size: 38.5px;
+margin: 10px 0;
+font-family: inherit;
+font-weight: bold;
+line-height: 40px;
+color: inherit;
+text-rendering: optimizelegibility;
+}
+
+/* --- tags --- */
+.tags { margin-bottom: 10px;}
+.tag { margin-bottom: 5px;}
+
+/* --- side-bar ---*/
+.side-bar {
+  text-align: center;
+}
+
+.side-bar li {
+  margin-bottom: 8px;
+}
+
+/* --- date --- */
+.date {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size:18px;
+  line-height:100%;
+  padding: 10px;
+}
+
+.date div span {
+  font-size:45%;
+  padding-left: 5px;
+}
+
+.date-year {
+  font-size: 70%;
+}
+
+/* --- entry --- */
+.entry { background-color: white; border-radius: 5px; padding-top: 10px; padding-bottom: 20px; position: relative; margin-bottom: 20px;}
+.entry > * { padding-left: 20px; padding-right: 20px;}
+.entry .title { margin-bottom: 10px; }
+
+/* --- speech bubble: visually connects entries to authors --- */ 
+.speech-bubble { background-image: url(http://static.tumblr.com/vv8cdma/4AAm155zf/speech-bubble.png); width: 16px; height: 16px; position: absolute; padding: 0; left: -16px; top: 16px; }
+
+/* --- author --- */
+#author {
+  text-align: center;
+}
+
+.followtumblelog {
+  margin: 10px 0;
+}
+/* --- notes and comments --- */
+.notes-container, .comments-container { background-color: white; border-radius: 5px; position: relative; margin: 20px 0; }
+.notes-container .notes, .comments-container #disqus_thread { padding: 20px; margin: 0; }
+.notes-container ol.notes { list-style: none; }
+
+/* FC Webicons by Fairhead Creative http://fairheadcreative.com */
+.fc-webicon { display: inline-block; background-size: 100%; width: 30px; height: 30px; text-indent: -999em; text-align: left; -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin-bottom: 5px; }
+.fc-webicon:hover { margin: -1px 0 1px; -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); }
+/* RSS */
+.fc-webicon.rss { background: url("http://static.tumblr.com/hkw90bf/6W2mgwm11/fc-webicon-rss-m.png"); }
+/* Twitter */
+.fc-webicon.twitter { background: url("http://static.tumblr.com/hkw90bf/78dmgwn4h/fc-webicon-twitter-m.png"); }
+/* Github */
+.fc-webicon.github { background: url("http://static.tumblr.com/hkw90bf/1Ctmgwnae/fc-webicon-github-m.png"); }
+/* Google+ */
+.fc-webicon.googleplus { background: url("http://static.tumblr.com/hkw90bf/7Evmgwndv/fc-webicon-googleplus-m.png"); }
+/* Facebook */
+.fc-webicon.facebook { background: url("http://static.tumblr.com/hkw90bf/cWWmgwnjc/fc-webicon-facebook-m.png"); }
+/* Wordpress */
+.fc-webicon.wordpress { background: url("http://static.tumblr.com/hkw90bf/1vbmgwnqg/fc-webicon-wordpress-m.png"); }
+/* FC Webicons by Fairhead Creative http://fairheadcreative.com */
+.fc-webicon { display: inline-block; background-size: 100%; width: 30px; height: 30px; text-indent: -999em; text-align: left; -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin-bottom: 5px; }
+.fc-webicon:hover { margin: -1px 0 1px; -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); }
+/* RSS */
+.fc-webicon.rss { background: url("http://static.tumblr.com/hkw90bf/6W2mgwm11/fc-webicon-rss-m.png"); }
+/* Twitter */
+.fc-webicon.twitter { background: url("http://static.tumblr.com/hkw90bf/78dmgwn4h/fc-webicon-twitter-m.png"); }
+/* Github */
+.fc-webicon.github { background: url("http://static.tumblr.com/hkw90bf/1Ctmgwnae/fc-webicon-github-m.png"); }
+/* Google+ */
+.fc-webicon.googleplus { background: url("http://static.tumblr.com/hkw90bf/7Evmgwndv/fc-webicon-googleplus-m.png"); }
+/* Facebook */
+.fc-webicon.facebook { background: url("http://static.tumblr.com/hkw90bf/cWWmgwnjc/fc-webicon-facebook-m.png"); }
+/* Wordpress */
+.fc-webicon.wordpress { background: url("http://static.tumblr.com/hkw90bf/1vbmgwnqg/fc-webicon-wordpress-m.png"); }

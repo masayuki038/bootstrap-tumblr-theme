@@ -10,6 +10,13 @@
 <meta name="text:Widgets Code2" content="" />
 <meta name="text:Disqus Shortname" content="" />
 <meta name="text:Follow Tumblelog" content="" />
+<meta name="text:Twitter ID" content="" />
+<meta name="text:Github ID" content="" />
+<meta name="text:Google Plusone ID" content="" />
+<meta name="text:Facebook ID" content="" />
+<meta name="text:Wordpress ID" content="" />
+
+<meta name="if:Show RSS Button" content="1"/>
 <meta name="if:Show Twitter Share Button" content="1"/>
 <meta name="if:Show Hatena Bookmark Share Button" content="1"/>
 <meta name="if:Show Google Plusone Share Button" content="1"/>
@@ -187,7 +194,6 @@ _gaq.push(['_trackPageview']);
 
               <!-- share button area -->
               {block:Permalink} 
-
               <ul class="unstyled">
                 {block:IfShowTumblrShareButton}
                 <li>
@@ -421,12 +427,24 @@ _gaq.push(['_trackPageview']);
 
         <!-- social buttons -->
         <ul class="inline">
-          <li><a href="#" class="fc-webicon rss">RSS</a></li>
-          <li><a href="#" class="fc-webicon twitter">twitter</a></li>
-          <li><a href="#" class="fc-webicon github">github</a></li>
-          <li><a href="#" class="fc-webicon googleplus">googleplus</a></li>
-          <li><a href="#" class="fc-webicon facebook">facebook</a></li>
-          <li><a href="#" class="fc-webicon wordpress">wordpress</a></li>
+          {block:IfShowRSSButton}
+          <li><a href="{RSS}" class="fc-webicon rss" target="_blank">RSS</a></li>
+          {/block:IfShowRSSButton}
+          {block:IfTwitterID}
+          <li><a href="https://twitter.com/{text:Twitter ID}" class="fc-webicon twitter" target="_blank">twitter</a></li>
+          {/block:IfTwitterID}
+          {block:IfGithubID}
+          <li><a href="https://github.com/{text:Github ID}" class="fc-webicon github" target="_blank">github</a></li>
+          {/block:IfGithubID}
+          {block:IfGooglePlusoneID}
+          <li><a href="https://plus.google.com/{text:Google Plusone ID}/posts" class="fc-webicon googleplus" target="_blank">googleplus</a></li>
+          {/block:IfGooglePlusoneID}
+          {block:IfFacebookID}
+          <li><a href="http://www.facebook.com/{text:Facebook ID}" class="fc-webicon facebook" target="_blank">facebook</a></li>
+          {/block:IfFacebookID}
+          {block:IfWordpressID}
+          <li><a href="text:Wordpress ID" class="fc-webicon wordpress" target="_blank">wordpress</a></li>
+          {/block:IfWordpressID}
         </ul>
         <!-- /social buttons -->
       </div>
