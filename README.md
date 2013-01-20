@@ -7,6 +7,9 @@ Tumblr用に作成した[Bootstrap](http://twitter.github.com/bootstrap/)をベ�
 * ヘッダー、フッター、ボディ(3カラム)の構成となっております。
 * テキストの投稿をメインに考えて作成しております。
 
+[動作イメージ](http://testniwaringo.tumblr.com/)
+
+
 ## ページ詳細
 
 ### ヘッダー
@@ -61,27 +64,28 @@ Tumblr、Bootstrap、テーマのGithubページへのリンク
 ## 設定項目
 
 ### テキスト項目
-**Google Webmaster Tool Code** - Googleウェブマスター用のコードを入力して下さい。google-site-verificationのメタ要素のcontentに入力した内容が反映されます。
-**Google Analytics UA Code** - Google AnalyticsのUA Codeを入力してください。
-**Disqus Shortname** - DisqusのShortnameを入力してください。
-**Follow Tumblelog** - Tumblelogを入力してください。入力されると右カラムに{Follow on Tumblr}アイコンが表示されます。
-**Twitter ID** - TwitterのIDを入力してください。右カラムにTwitterアイコンが表示されます。
-**Github ID** - GithuのIDを入力してください。右カラムにGithubアイコンが表示されます。
-**Google Plusone ID** - Google+1のIDを入力して下さい(https://plus.google.com/{ここの数字}/posts)。右カラムにGoogle+1アイコンが表示されます。
-**Facebook ID** - フェイスブックのIDを入力して下さい。右カラムにFacebookアイコンが表示されます。
-**Wordpress URL** - ワードプレスのブログURLを入力して下さい。右カラムにWordpressアイコンが表示されます。
-**Widgets Code1** - Widgets用です。スクリプトタグ等を入力して下さい。 Disqusコメント上部に表示されます。
-**Widgets Code2** - Widgets用です。スクリプトタグ等を入力して下さい。 Disqusコメント下部に表示されます。
+- **Google Webmaster Tool Code** - Googleウェブマスター用のコードを入力して下さい。google-site-verificationのメタ要素のcontentに入力した内容が反映されます。
+- **Google Analytics UA Code** - Google AnalyticsのUA Codeを入力してください。
+- **Disqus Shortname** - DisqusのShortnameを入力してください。
+- **Follow Tumblelog** - Tumblelogを入力してください。入力されると右カラムに{Follow on Tumblr}アイコンが表示されます。
+- **Twitter ID** - TwitterのIDを入力してください。右カラムにTwitterアイコンが表示されます。
+- **Github ID** - GithuのIDを入力してください。右カラムにGithubアイコンが表示されます。
+- **Google Plusone ID** - Google+1のIDを入力して下さい(https://plus.google.com/{ここの数字}/posts)。右カラムにGoogle+1アイコンが表示されます。
+- **Facebook ID** - フェイスブックのIDを入力して下さい。右カラムにFacebookアイコンが表示されます。
+- **Wordpress URL** - ワードプレスのブログURLを入力して下さい。右カラムにWordpressアイコンが表示されます。
+- **Widgets Code1** - Widgets用です。スクリプトタグ等を入力して下さい。 Disqusコメント上部に表示されます。
+- **Widgets Code2** - Widgets用です。スクリプトタグ等を入力して下さい。 Disqusコメント下部に表示されます。
+
 ウィジェットはZenbackなどの利用を想定しております。
 
 ### 選択項目
-**Show RSS Button** - 右カラムにRSSアイコンを表示します。
-**Show Twitter Share Button** - 左カラムにTwitterのシェアボタンを表示します。
-**Show Hatena Bookmark Share Button** - 左カラムにはてなブックマークのシェアボタンを表示します。
-**Show Google Plusone Share Button** - 左カラムにGoogle+1のシェアボタンを表示します。
-**Show Buffer Share Button** - 左カラムにBufferのシェアボタンを表示します。
-**Show Facebook Share Button** - 左カラムにFacebookのシェアボタンを表示します。
-**Show Tumblr Share Button** - 左カラムにTumblrのシェアボタンを表示します。
+- **Show RSS Button** - 右カラムにRSSアイコンを表示します。
+- **Show Twitter Share Button** - 左カラムにTwitterのシェアボタンを表示します。
+- **Show Hatena Bookmark Share Button** - 左カラムにはてなブックマークのシェアボタンを表示します。
+- **Show Google Plusone Share Button** - 左カラムにGoogle+1のシェアボタンを表示します。
+- **Show Buffer Share Button** - 左カラムにBufferのシェアボタンを表示します。
+- **Show Facebook Share Button** - 左カラムにFacebookのシェアボタンを表示します。
+- **Show Tumblr Share Button** - 左カラムにTumblrのシェアボタンを表示します。
 
 ## License
 The MIT License

@@ -14,8 +14,7 @@
 <meta name="text:Github ID" content="" />
 <meta name="text:Google Plusone ID" content="" />
 <meta name="text:Facebook ID" content="" />
-<meta name="text:Wordpress ID" content="" />
-
+<meta name="text:Wordpress URL" content="" />
 <meta name="if:Show RSS Button" content="1"/>
 <meta name="if:Show Twitter Share Button" content="1"/>
 <meta name="if:Show Hatena Bookmark Share Button" content="1"/>
@@ -442,9 +441,9 @@ _gaq.push(['_trackPageview']);
           {block:IfFacebookID}
           <li><a href="http://www.facebook.com/{text:Facebook ID}" class="fc-webicon facebook" target="_blank">facebook</a></li>
           {/block:IfFacebookID}
-          {block:IfWordpressID}
-          <li><a href="text:Wordpress ID" class="fc-webicon wordpress" target="_blank">wordpress</a></li>
-          {/block:IfWordpressID}
+          {block:IfWordpressURL}
+          <li><a href="{text:Wordpress }" class="fc-webicon wordpress" target="_blank">wordpress</a></li>
+          {/block:IfWordpressURL}
         </ul>
         <!-- /social buttons -->
       </div>
