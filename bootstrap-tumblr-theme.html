@@ -3,7 +3,6 @@
 {block:IfGoogleWebmasterToolCode}
 <meta name="google-site-verification" content="{text:Google Webmaster Tool Code}" />
 {block:IfGoogleWebmasterToolCode}
-
 <!-- TUMBLR APPEARANCE OPTIONS -->
 <meta name="text:Google Webmaster Tool Code" content="" />
 <meta name="text:Google Analytics UA Code" content="" />
@@ -17,147 +16,26 @@
 <meta name="if:Show Buffer Share Button" content="1"/>
 <meta name="if:Show Facebook Share Button" content="1"/>
 <meta name="if:Show Tumblr Share Button" content="1"/>
-
 <!-- END TUMBLR APPEARANCE OPTIONS -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<meta name="description" content="{MetaDescription}" /> 
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+<title>{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}{block:Pagination} - {lang:Page CurrentPage of TotalPages}{/block:Pagination}</title> 
 <link href="{Favicon}" rel="shortcut icon" />
 <link rel="apple-touch-icon" href="{PortraitURL-128}">
 <link rel="alternate" type="application/rss+xml" href="{RSS}"> 
-
-<title>{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}{block:Pagination} - {lang:Page CurrentPage of TotalPages}{/block:Pagination}</title> 
-
 <!-- ======== STYLES use bootstrap 2.2.2 ======== -->
 <link href="http://static.tumblr.com/hkw90bf/4Z0mguls4/bootstrap.min.css" rel="stylesheet">
 <link href="http://static.tumblr.com/hkw90bf/8zKmgunbe/bootstrap-responsive.min.css" rel="stylesheet">
 
-<!-- Font Awesome - http://fortawesome.github.com/Font-Awesome -->
-<link href="http://static.tumblr.com/vv8cdma/c18m6e0y9/font-awesome.css" rel="stylesheet">
-
-<style type="text/css">
-/* --- high-level --- */
-body { 
-  padding-top: 60px; /* room for fixed nav-bar */
-  font-family: Helvetica, Arial, Verdana, 'ƒqƒ‰ƒMƒmŠpƒS ProN W3', 'Hiragino Kaku Gothic ProN', 'ƒƒCƒŠƒI', Meiryo, '‚l‚r ‚oƒSƒVƒbƒN', 'MS PGothic', sans-serif;
-  font-size: 14px;
-  line-height: 1.3;
-  font-weight: normal;
-  background-color: whiteSmoke;
-}
-
-h1 {
-  font-size: 26px;
-}
-
-.container {
-  width: 1170px;
-}
-
-/* --- navbar --- */
-.navbar {
-  line-height: 100%;
-}
-
-/* --- footer --- */
-.footer {
-  background-color: white;
-  padding: 40px 0;
-  text-align: center;
-  margin-top: 40px;
-  color: #777;
-}
-
-/* --- blog title --- */
-#blog_title_container {
-  margin: 10px 0 30px;
-}
-
-#blog_title_title {
-font-size: 38.5px;
-margin: 10px 0;
-font-family: inherit;
-font-weight: bold;
-line-height: 40px;
-color: inherit;
-text-rendering: optimizelegibility;
-}
-
-/* --- tags --- */
-.tags { margin-bottom: 10px;}
-.tag { margin-bottom: 5px;}
-
-/* --- side-bar ---*/
-.side-bar {
-  text-align: center;
-}
-
-.side-bar li {
-  margin-bottom: 8px;
-}
-
-/* --- date --- */
-.date {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size:18px;
-  line-height:100%;
-  padding: 10px;
-}
-
-.date div span {
-  font-size:45%;
-  padding-left: 5px;
-}
-
-.date-year {
-  font-size: 70%;
-}
-
-/* --- entry --- */
-.entry { background-color: white; border-radius: 5px; padding-top: 10px; padding-bottom: 20px; position: relative; margin-bottom: 20px;}
-.entry > * { padding-left: 20px; padding-right: 20px;}
-.entry .title { margin-bottom: 10px; }
-
-/* --- speech bubble: visually connects entries to authors --- */ 
-.speech-bubble { background-image: url(http://static.tumblr.com/vv8cdma/4AAm155zf/speech-bubble.png); width: 16px; height: 16px; position: absolute; padding: 0; left: -16px; top: 16px; }
-
-/* --- author --- */
-#author {
-  text-align: center;
-}
-
-.followtumblelog {
-  margin: 10px 0;
-}
-/* --- notes and comments --- */
-.notes-container, .comments-container { background-color: white; border-radius: 5px; position: relative; margin: 20px 0; }
-.notes-container .notes, .comments-container #disqus_thread { padding: 20px; margin: 0; }
-.notes-container ol.notes { list-style: none; }
-
-/* FC Webicons by Fairhead Creative http://fairheadcreative.com */
-.fc-webicon { display: inline-block; background-size: 100%; width: 30px; height: 30px; text-indent: -999em; text-align: left; -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin-bottom: 5px; }
-.fc-webicon:hover { margin: -1px 0 1px; -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); }
-/* RSS */
-.fc-webicon.rss { background: url("http://static.tumblr.com/hkw90bf/6W2mgwm11/fc-webicon-rss-m.png"); }
-/* Twitter */
-.fc-webicon.twitter { background: url("http://static.tumblr.com/hkw90bf/78dmgwn4h/fc-webicon-twitter-m.png"); }
-/* Github */
-.fc-webicon.github { background: url("http://static.tumblr.com/hkw90bf/1Ctmgwnae/fc-webicon-github-m.png"); }
-/* Google+ */
-.fc-webicon.googleplus { background: url("http://static.tumblr.com/hkw90bf/7Evmgwndv/fc-webicon-googleplus-m.png"); }
-/* Facebook */
-.fc-webicon.facebook { background: url("http://static.tumblr.com/hkw90bf/cWWmgwnjc/fc-webicon-facebook-m.png"); }
-/* Wordpress */
-.fc-webicon.wordpress { background: url("http://static.tumblr.com/hkw90bf/1vbmgwnqg/fc-webicon-wordpress-m.png"); }
-
-</style>
-
+<!-- custom css -->
+<link href="http://static.tumblr.com/hkw90bf/4kvmgwsx3/custom.min.css" rel="stylesheet">
 <style type="text/css">
 <!--
 {CustomCSS}
 -->
 </style> 
-
 {block:IfGoogleAnalyticsUACode}
 <script type="text/javascript">
 var _gaq = _gaq || [];
@@ -172,7 +50,7 @@ _gaq.push(['_trackPageview']);
 {/block:IfGoogleAnalyticsUACode}
 </head> 
 <body>
-
+{block:IfShowFacebookShareButton}
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -181,7 +59,7 @@ _gaq.push(['_trackPageview']);
   js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
+{/block:IfShowFacebookShareButton}
 <header>
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
@@ -258,7 +136,9 @@ _gaq.push(['_trackPageview']);
   {block:IndexPage} 
   <div class="page-header" id="blog_title_container">
     <div id="blog_title_title">{Title}</div>
+    {block:Description}
     <div>{Description}</div>
+    {/block:Description}
   </div>
   {/block:IndexPage} 
 
@@ -570,8 +450,8 @@ _gaq.push(['_trackPageview']);
 </div>
 <footer class="footer">
 <p>{lang:Powered by Tumblr 2}.</p>
-<p>Built with <a href="http://twitter.github.com/bootstrap/">Bootstrap.</a></p>
-<p><a href="https://github.com/niwaringo/bootstrap-tumblr-theme">Theme by niwaringo</a></p>
+<p>Built with <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap.</a></p>
+<p><a href="https://github.com/niwaringo/bootstrap-tumblr-theme" target="_blank">Theme by niwaringo</a></p>
 </footer>
 
 
