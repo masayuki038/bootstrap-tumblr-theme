@@ -70,7 +70,7 @@ Tumblr、Bootstrap、テーマのGithubページへのリンク
 - **Follow Tumblelog** - Tumblelogを入力してください。入力されると右カラムに{Follow on Tumblr}アイコンが表示されます。
 - **Twitter ID** - TwitterのIDを入力してください。右カラムにTwitterアイコンが表示されます。
 - **Github ID** - GithuのIDを入力してください。右カラムにGithubアイコンが表示されます。
-- **Google Plusone ID** - Google+1のIDを入力して下さい(https://plus.google.com/{ここの数字}/posts)。右カラムにGoogle+1アイコンが表示されます。
+- **Google Plusone ID** - Google+1のIDを入力して下さい |https://plus.google.com/{ここの数字}/posts|。右カラムにGoogle+1アイコンが表示されます。
 - **Facebook ID** - フェイスブックのIDを入力して下さい。右カラムにFacebookアイコンが表示されます。
 - **Wordpress URL** - ワードプレスのブログURLを入力して下さい。右カラムにWordpressアイコンが表示されます。
 - **Widgets Code1** - Widgets用です。スクリプトタグ等を入力して下さい。 Disqusコメント上部に表示されます。
