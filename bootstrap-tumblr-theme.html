@@ -1,15 +1,24 @@
-<!DOCTYPE html>
 <html lang="en">
 <head> 
+{block:IfGoogleWebmasterToolCode}
+<meta name="google-site-verification" content="{text:Google Webmaster Tool Code}" />
+{block:IfGoogleWebmasterToolCode}
 
 <!-- TUMBLR APPEARANCE OPTIONS -->
+<meta name="text:Google Webmaster Tool Code" content="" />
 <meta name="text:Google Analytics UA Code" content="" />
 <meta name="text:Widgets Code1" content="" />
 <meta name="text:Widgets Code2" content="" />
-<meta name="text:Disqus Shortname" content=""/>
+<meta name="text:Disqus Shortname" content="" />
+<meta name="text:Follow Tumblelog" content="" />
+<meta name="if:Show Twitter Share Button" content="1"/>
+<meta name="if:Show Hatena Bookmark Share Button" content="1"/>
+<meta name="if:Show Google Plusone Share Button" content="1"/>
+<meta name="if:Show Buffer Share Button" content="1"/>
+<meta name="if:Show Facebook Share Button" content="1"/>
+<meta name="if:Show Tumblr Share Button" content="1"/>
 
 <!-- END TUMBLR APPEARANCE OPTIONS -->
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="description" content="{MetaDescription}" /> 
 <link href="{Favicon}" rel="shortcut icon" />
@@ -116,10 +125,30 @@ text-rendering: optimizelegibility;
 #author {
   text-align: center;
 }
+
+.followtumblelog {
+  margin: 10px 0;
+}
 /* --- notes and comments --- */
 .notes-container, .comments-container { background-color: white; border-radius: 5px; position: relative; margin: 20px 0; }
 .notes-container .notes, .comments-container #disqus_thread { padding: 20px; margin: 0; }
 .notes-container ol.notes { list-style: none; }
+
+/* FC Webicons by Fairhead Creative http://fairheadcreative.com */
+.fc-webicon { display: inline-block; background-size: 100%; width: 30px; height: 30px; text-indent: -999em; text-align: left; -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin-bottom: 5px; }
+.fc-webicon:hover { margin: -1px 0 1px; -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25); }
+/* RSS */
+.fc-webicon.rss { background: url("http://static.tumblr.com/hkw90bf/6W2mgwm11/fc-webicon-rss-m.png"); }
+/* Twitter */
+.fc-webicon.twitter { background: url("http://static.tumblr.com/hkw90bf/78dmgwn4h/fc-webicon-twitter-m.png"); }
+/* Github */
+.fc-webicon.github { background: url("http://static.tumblr.com/hkw90bf/1Ctmgwnae/fc-webicon-github-m.png"); }
+/* Google+ */
+.fc-webicon.googleplus { background: url("http://static.tumblr.com/hkw90bf/7Evmgwndv/fc-webicon-googleplus-m.png"); }
+/* Facebook */
+.fc-webicon.facebook { background: url("http://static.tumblr.com/hkw90bf/cWWmgwnjc/fc-webicon-facebook-m.png"); }
+/* Wordpress */
+.fc-webicon.wordpress { background: url("http://static.tumblr.com/hkw90bf/1vbmgwnqg/fc-webicon-wordpress-m.png"); }
 
 </style>
 
@@ -157,15 +186,7 @@ _gaq.push(['_trackPageview']);
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-
         <a class="brand" href="/" >{Title}</a>
-
         <div class="nav-collapse">
           <ul class="nav">
             {block:IfLinkLogoToApplication}
@@ -222,7 +243,7 @@ _gaq.push(['_trackPageview']);
             {/block:Pages}
           </ul>
 
-          <form class="navbar-search pull-right" action="/search" method="get">
+          <form class="navbar-search" action="/search" method="get">
             <input type="text" class="search-query" placeholder="{lang:Search}..." id="search" name="q" value="" />
           </form>
         </div> <!-- nav-collapse -->
@@ -235,8 +256,8 @@ _gaq.push(['_trackPageview']);
 
 <div class="container">
   {block:IndexPage} 
-  <div id="blog_title_container">
-    <div class="page-header" id="blog_title_title">{Title}</div>
+  <div class="page-header" id="blog_title_container">
+    <div id="blog_title_title">{Title}</div>
     <div>{Description}</div>
   </div>
   {/block:IndexPage} 
@@ -274,12 +295,12 @@ _gaq.push(['_trackPageview']);
         <div class="row-fluid post {block:Text}text{/block:Text}{block:Photo}photo{/block:Photo}{block:Quote}quote{/block:Quote}{block:Video}video{/block:Video}{block:Link}link{/block:Link}{block:Chat}chat{/block:Chat}{block:Audio}audio{/block:Audio}{block:Answer}answer{/block:Answer}">  
 
           <div class="span2 side-bar">
-            <div class="date label">
+            <div class="date btn btn-inverse" data-permalink="{Permalink}"}>
               {block:Date}
               {block:NotReblog}
               <div class="date-month">{ShortMonth}</div>
               <div class="date-day">{DayOfMonthWithZero}</div>
-              <div class="date-year">{Year}<span></span></div>
+              <div class="date-year">{Year}</div>
               {/block:NotReblog}
               {/block:Date}
             </div> <!-- .date -->
@@ -288,29 +309,43 @@ _gaq.push(['_trackPageview']);
               {block:Permalink} 
 
               <ul class="unstyled">
+                {block:IfShowTumblrShareButton}
                 <li>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-count="none">ツイート</a>
+                <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1T.png') top left no-repeat transparent;">Share on Tumblr</a>
+                </li>
+                {/block:IfShowTumblrShareButton}
+                {block:IfShowTwitterShareButton}
+                <li>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-count="vertical">ツイート</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 </li>
+                {/block:IfShowTwitterShareButton}
 
+                {block:IfShowHatenaBookmarkShareButton}
                 <li>
-                <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="simple" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+                <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
                 </li>
+                {/block:IfShowHatenaBookmarkShareButton}
 
-                <li>
-                <!-- Place this tag where you want the +1 button to render. -->
-                <div class="g-plusone" data-size="medium" data-annotation="none"></div>
-                <!-- Place this tag after the last +1 button tag. -->
-                <script type="text/javascript"> window.___gcfg = {lang: 'ja'}; (function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })(); </script>
-                </li>
-
-                <li>
-                <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="none" >Buffer</a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
-                </li>
-
+                {block:IfShowFacebookShareButton}
                 <li>
                 <div class="fb-like" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true"></div>
                 </li>
+                {/block:IfShowFacebookShareButton}
+
+                {block:IfShowGooglePlusoneShareButton}
+                <li>
+                <div class="g-plusone" data-size="tall"></div>
+                <script type="text/javascript"> window.___gcfg = {lang: 'ja'}; (function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })(); </script>
+                </li>
+                {/block:IfShowGooglePlusoneShareButton}
+
+
+                {block:IfShowBufferShareButton}
+                <li>
+                <a href="http://bufferapp.com/add" class="buffer-add-button" data-count="none" >Buffer</a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>
+                </li>
+                {/block:IfShowBufferShareButton}
 
               </ul>
 
@@ -322,6 +357,7 @@ _gaq.push(['_trackPageview']);
           <div class="span10">
             <div class="entry">
 
+              <div class="speech-bubble"></div>
               <div class="title">
 
                 {block:Title}
@@ -445,6 +481,10 @@ _gaq.push(['_trackPageview']);
             {/block:HasTags}
 
             {block:IndexPage} 
+            {block:IfDisqusShortname}
+            <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>
+            {/block:IfDisqusShortname}
+
             {block:NoteCount} 
             <div class="notes">
               <a href="{Permalink}#notes">
@@ -454,6 +494,23 @@ _gaq.push(['_trackPageview']);
             {/block:NoteCount} 
             {/block:IndexPage} 
 
+            {block:PermalinkPagination} 
+
+            {block:IfWidgetsCode1}
+            <div class="widgets">{text:Widgets Code1}</div>
+            {/block:IfWidgetsCode1}
+
+            {block:IfDisqusShortname}
+            <div id="disqus_thread"></div>
+            <script type="text/javascript" src="http://{text:Disqus Shortname}.disqus.com/embed.js"></script>
+            <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+            {/block:IfDisqusShortname}
+            {block:IfWidgetsCode2}
+
+            <div class="widgets">{text:Widgets Code2}</div>
+            {/block:IfWidgetsCode2}
+            {/block:PermalinkPagination} 
+
             {block:Permalink} 
             {block:NoteCount}
             <div class="notes-container" id="notes">{PostNotes}</div>
@@ -461,26 +518,6 @@ _gaq.push(['_trackPageview']);
             {/block:Permalink} 
 
 
-            {block:IfDisqusShortname}
-            <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>
-            {/block:IfDisqusShortname}
-
-            {block:PermalinkPagination} 
-
-            {block:IfWidgetsCode1}
-            <div class="widgets">{text:Widgets Code1}</div>
-            {/block:IfWidgetsCode1}
-
-            {block:IfWidgetsCode2}
-            <div class="widgets">{text:Widgets Code2}</div>
-            {/block:IfWidgetsCode2}
-
-            {block:IfDisqusShortname}
-            <div id="disqus_thread"></div>
-            <script type="text/javascript" src="http://{text:Disqus Shortname}.disqus.com/embed.js"></script>
-            <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
-            {/block:IfDisqusShortname}
-            {/block:PermalinkPagination} 
           </div>
         </div> <!-- .row .post -->
 
@@ -497,6 +534,21 @@ _gaq.push(['_trackPageview']);
         <div class="author-name"><a href="{PostAuthorURL}" target="_blank">{PostAuthorTitle}</a></div>
         <img src="{PortraitURL-128}">
         <div style="clear: both"></div>
+
+        {block:IfFollowTumblelog}
+        <iframe class="followtumblelog" frameborder="0" border="0" scrolling="no" allowtransparency="true" height="25" width="114" src="http://platform.tumblr.com/v1/follow_button.html?button_type=2&tumblelog={text:Follow tumblelog}&color_scheme=dark"></iframe>
+        {/block:IfFollowTumblelog}
+
+        <!-- social buttons -->
+        <ul class="inline">
+          <li><a href="#" class="fc-webicon rss">RSS</a></li>
+          <li><a href="#" class="fc-webicon twitter">twitter</a></li>
+          <li><a href="#" class="fc-webicon github">github</a></li>
+          <li><a href="#" class="fc-webicon googleplus">googleplus</a></li>
+          <li><a href="#" class="fc-webicon facebook">facebook</a></li>
+          <li><a href="#" class="fc-webicon wordpress">wordpress</a></li>
+        </ul>
+        <!-- /social buttons -->
       </div>
       {/block:GroupMembers} 
     </div>
@@ -518,10 +570,15 @@ _gaq.push(['_trackPageview']);
 </div>
 <footer class="footer">
 <p>{lang:Powered by Tumblr 2}.</p>
+<p>Built with <a href="http://twitter.github.com/bootstrap/">Bootstrap.</a></p>
+<p><a href="https://github.com/niwaringo/bootstrap-tumblr-theme">Theme by niwaringo</a></p>
 </footer>
 
 
 <!-- ======== SCRIPTS ======== -->
+{block:IfShowTumblrShareButton}
+<script src="http://platform.tumblr.com/v1/share.js"></script>
+{/block:IfShowTumblrShareButton}
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
 {block:IfDisqusShortname}
@@ -538,6 +595,12 @@ _gaq.push(['_trackPageview']);
   document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
 })();
 //]]>
+// date link
+(function($) {
+  $('.date').click(function() {
+    location.href = $(this).data('permalink');
+  });
+}(jQuery));
 </script>
 {/block:IfDisqusShortname}
 </body> 
