@@ -7,7 +7,7 @@ Tumblr用に作成した[Bootstrap](http://twitter.github.com/bootstrap/)をベ�
 * ヘッダー、フッター、ボディ(3カラム)の構成となっております。
 * テキストの投稿をメインに考えて作成しております。
 
-[動作イメージ](http://testniwaringo.tumblr.com/)
+[動作イメージ](http://niwaringo.tumblr.com/)
 
 
 ## ページ詳細
