@@ -24,10 +24,15 @@
 <meta name="if:Show Tumblr Share Button" content="1"/>
 <!-- END TUMBLR APPEARANCE OPTIONS -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-{block:Description}
-<meta name="description" content="{MetaDescription}" />
-{/block:Description}
-<title>{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}{block:Pagination} - {lang:Page CurrentPage of TotalPages}{/block:Pagination}</title> 
+
+<meta name="title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}" /> 
+<meta name="description" content="{block:Description}{MetaDescription} | {/block:Description}{Title}" />
+{block:Permalink}
+<meta name="keywords" content="{block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}" /> 
+{/block:Permalink}
+
+<title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
+
 <link href="{Favicon}" rel="shortcut icon" />
 <link rel="apple-touch-icon" href="{PortraitURL-128}">
 <link rel="alternate" type="application/rss+xml" href="{RSS}"> 
@@ -75,9 +80,7 @@ _gaq.push(['_trackPageview']);
           <ul class="nav">
             {block:IfLinkLogoToApplication}
             <li>
-            <a href="/">
-              Blog
-            </a>
+            <a href="/">Blog</a>
             </li>
             <li class="divider-vertical"></li>
             {/block:IfLinkLogoToApplication}                
@@ -462,9 +465,8 @@ _gaq.push(['_trackPageview']);
 </div>
 </div>
 <footer class="footer">
-<p>{lang:Powered by Tumblr 2}.</p>
-<p>Built with <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap.</a></p>
-<p><a href="https://github.com/niwaringo/bootstrap-tumblr-theme" target="_blank">Theme by niwaringo</a></p>
+<p>&copy; {CopyrightYears} <a href="/" >{Title}</a></p>
+<p>{lang:Powered by Tumblr 2}. | Built with <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap.</a> | <a href="https://github.com/niwaringo/bootstrap-tumblr-theme" target="_blank">Theme by niwaringo</a></p>
 </footer>
 
 
