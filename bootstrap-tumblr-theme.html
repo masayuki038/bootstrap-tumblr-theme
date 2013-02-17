@@ -6,12 +6,15 @@
 <!-- TUMBLR APPEARANCE OPTIONS -->
 <meta name="text:Google Webmaster Tool Code" content="" />
 <meta name="text:Google Analytics UA Code" content="" />
-<meta name="text:Widgets Code1" content="" />
-<meta name="text:Widgets Code2" content="" />
-<meta name="text:SideWidgets Code1" content="" />
-<meta name="text:SideWidgets Code2" content="" />
+<meta name="text:WidgetsEntry Code1" content="" />
+<meta name="text:WidgetsEntry Code2" content="" />
+<meta name="text:WidgetsSide Code1" content="" />
+<meta name="text:WidgetsSide Code2" content="" />
+<meta name="text:WidgetsFoot Code1" content="" />
+<meta name="text:WidgetsFoot Code2" content="" />
 <meta name="text:Disqus Shortname" content="" />
 <meta name="text:Follow Tumblelog" content="" />
+<meta name="text:Follow TwitterButtonName" content="" />
 <meta name="text:Twitter ID" content="" />
 <meta name="text:Github ID" content="" />
 <meta name="text:Google Plusone ID" content="" />
@@ -42,7 +45,7 @@
 <link href="http://static.tumblr.com/hkw90bf/8zKmgunbe/bootstrap-responsive.min.css" rel="stylesheet">
 
 <!-- custom css -->
-<link href="http://static.tumblr.com/hkw90bf/617mhcxt5/custom.min.css" rel="stylesheet">
+<link href="http://static.tumblr.com/hkw90bf/GcHmicmcj/custom.min.css" rel="stylesheet">
 <style type="text/css">
 <!--
 {CustomCSS}
@@ -384,7 +387,7 @@ _gaq.push(['_trackPageview']);
             {block:PermalinkPagination} 
 
             {block:IfWidgetsCode1}
-            <div class="widgets">{text:Widgets Code1}</div>
+            <div class="widgets">{text:WidgetsEntry Code1}</div>
             {/block:IfWidgetsCode1}
 
             {block:IfDisqusShortname}
@@ -394,7 +397,7 @@ _gaq.push(['_trackPageview']);
             {/block:IfDisqusShortname}
             {block:IfWidgetsCode2}
 
-            <div class="widgets">{text:Widgets Code2}</div>
+            <div class="widgets">{text:WidgetsEntry Code2}</div>
             {/block:IfWidgetsCode2}
             {/block:PermalinkPagination} 
 
@@ -417,13 +420,22 @@ _gaq.push(['_trackPageview']);
 
     <div class="span2">
       <div id="author">
-        <div class="author-name"><a href="{PostAuthorURL}" target="_blank">{PostAuthorTitle}</a></div>
-        <img id="portrait" src="{PortraitURL-128}">
-        <div style="clear: both"></div>
+        <div class="widgets">
+          <img id="portrait" src="{PortraitURL-128}">
+        </div>
 
         {block:IfFollowTumblelog}
-        <iframe class="followtumblelog" frameborder="0" border="0" scrolling="no" allowtransparency="true" height="25" width="114" src="http://platform.tumblr.com/v1/follow_button.html?button_type=2&tumblelog={text:Follow tumblelog}&color_scheme=dark"></iframe>
+        <div class="widgets">
+          <iframe class="followtumblelog" frameborder="0" border="0" scrolling="no" allowtransparency="true" height="25" width="114" src="http://platform.tumblr.com/v1/follow_button.html?button_type=2&tumblelog={text:Follow tumblelog}&color_scheme=dark"></iframe>
+        </div>
         {/block:IfFollowTumblelog}
+
+        {block:IfFollowTwitterButtonName}
+        <div class="widgets">
+          <a href="https://twitter.com/{text:Follow TwitterButtonName}" class="twitter-follow-button" data-show-count="false">Follow @{text:Follow TwitterButtonName}</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        {/block:IfFollowTwitterButtonName}
 
         <!-- social buttons -->
         <ul class="inline">
@@ -449,10 +461,10 @@ _gaq.push(['_trackPageview']);
         <!-- /social buttons -->
       </div>
       {block:IfSideWidgetsCode1}
-      <div class="widgets">{text:SideWidgets Code1}</div>
+      <div class="widgets">{text:WidgetsSide Code1}</div>
       {/block:IfSideWidgetsCode1}
       {block:IfSideWidgetsCode2}
-      <div class="widgets">{text:SideWidgets Code2}</div>
+      <div class="widgets">{text:WidgetsSide Code2}</div>
       {/block:IfSideWidgetsCode2}
     </div>
 
@@ -472,8 +484,14 @@ _gaq.push(['_trackPageview']);
 </div>
 </div>
 <footer class="footer">
+  {block:IfFootWidgetsCode1}
+  <div class="widgets">{text:WidgetsFoot Code1}</div>
+  {/block:IfFootWidgetsCode1}
 <p>&copy; {CopyrightYears} <a href="/" >{Title}</a></p>
 <p>{lang:Powered by Tumblr 2}. | Built with <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap.</a> | <a href="https://github.com/niwaringo/bootstrap-tumblr-theme" target="_blank">Theme by niwaringo</a></p>
+{block:IfFootWidgetsCode2}
+<div class="widgets">{text:WidgetsFoot Code2}</div>
+{/block:IfFootWidgetsCode2}
 </footer>
 
 
