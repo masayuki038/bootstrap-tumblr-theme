@@ -37,6 +37,11 @@ p {
 pre {
   margin-bottom: 20px;
 }
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
 /* --- navbar --- */
 .navbar {
   line-height: 100%;
@@ -80,6 +85,7 @@ text-rendering: optimizelegibility;
 #portrait {
   border-radius: 500px;
   -webkit-border-radius: 500px;
+  border: 1px solid #ccc;
 }
 
 /* --- date --- */
@@ -103,7 +109,7 @@ text-rendering: optimizelegibility;
 /* --- etc ---*/
 .widgets {
 text-align: center;
-margin: 20px 0;
+margin-bottom: 10px;
 }
 
 /* --- entry --- */
@@ -119,9 +125,6 @@ margin: 20px 0;
   text-align: center;
 }
 
-.followtumblelog {
-  margin: 10px 0;
-}
 /* --- notes and comments --- */
 .notes-container, .comments-container { background-color: white; border-radius: 5px; position: relative; margin: 20px 0; }
 .notes-container .notes, .comments-container #disqus_thread { padding: 20px; margin: 0; }

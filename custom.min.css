@@ -5,7 +5,7 @@ h3{font-size:18px;line-height:28px;margin:20px 0 5px;}
 h4{font-size:16px;line-height:25px;margin:10px 0 5px;}
 p{margin:0 0 20px 0;}
 pre{margin-bottom:20px;}
-.navbar{line-height:100%;}
+@media (min-width:1200px){.container{width:1100px;}}.navbar{line-height:100%;}
 .footer{background-color:white;padding:40px 0;text-align:center;margin-top:40px;color:#777;}
 #blog_title_container{margin:10px 0 30px;}
 #blog_title_title{font-size:38.5px;margin:10px 0;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;}
@@ -13,17 +13,16 @@ pre{margin-bottom:20px;}
 .tag{margin-bottom:5px;}
 .side-bar{text-align:center;}
 .side-bar li{margin-bottom:8px;}
-#portrait{border-radius:500px;-webkit-border-radius:500px;}
+#portrait{border-radius:500px;-webkit-border-radius:500px;border:1px solid #ccc;}
 .date{margin-bottom:20px;text-align:center;font-size:18px;line-height:100%;padding:10px;}
 .date div span{font-size:45%;padding-left:5px;}
 .date-year{font-size:70%;}
-.widgets{text-align:center;margin:20px 0;}
+.widgets{text-align:center;margin-bottom:10px;}
 .entry{background-color:white;border-radius:5px;padding-top:10px;padding-bottom:20px;position:relative;margin-bottom:20px;}
 .entry>*{padding-left:20px;padding-right:20px;}
 .entry .title{margin-bottom:10px;}
 .speech-bubble{background-image:url(http://static.tumblr.com/vv8cdma/4AAm155zf/speech-bubble.png);width:16px;height:16px;position:absolute;padding:0;left:-16px;top:16px;}
 #author{text-align:center;}
-.followtumblelog{margin:10px 0;}
 .notes-container,.comments-container{background-color:white;border-radius:5px;position:relative;margin:20px 0;}
 .notes-container .notes,.comments-container #disqus_thread{padding:20px;margin:0;}
 .notes-container ol.notes{list-style:none;}
