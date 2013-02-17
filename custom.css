@@ -103,6 +103,7 @@ text-rendering: optimizelegibility;
 /* --- etc ---*/
 .widgets {
 text-align: center;
+margin: 20px 0;
 }
 
 /* --- entry --- */
