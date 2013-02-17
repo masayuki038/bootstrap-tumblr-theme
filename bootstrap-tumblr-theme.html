@@ -386,19 +386,20 @@ _gaq.push(['_trackPageview']);
 
             {block:PermalinkPagination} 
 
-            {block:IfWidgetsCode1}
+            {block:IfWidgetsEntryCode1}
             <div class="widgets">{text:WidgetsEntry Code1}</div>
-            {/block:IfWidgetsCode1}
+            {/block:IfWidgetsEntryCode1}
 
             {block:IfDisqusShortname}
             <div id="disqus_thread"></div>
             <script type="text/javascript" src="http://{text:Disqus Shortname}.disqus.com/embed.js"></script>
             <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
             {/block:IfDisqusShortname}
-            {block:IfWidgetsCode2}
 
+            {block:IfWidgetsEntryCode2}
             <div class="widgets">{text:WidgetsEntry Code2}</div>
-            {/block:IfWidgetsCode2}
+            {/block:IfWidgetsEntryCode2}
+
             {/block:PermalinkPagination} 
 
             {block:Permalink} 
@@ -460,12 +461,12 @@ _gaq.push(['_trackPageview']);
         </ul>
         <!-- /social buttons -->
       </div>
-      {block:IfSideWidgetsCode1}
+      {block:IfSideWidgetsSideCode1}
       <div class="widgets">{text:WidgetsSide Code1}</div>
-      {/block:IfSideWidgetsCode1}
-      {block:IfSideWidgetsCode2}
+      {/block:IfSideWidgetsSideCode1}
+      {block:IfWidgetsSideCode2}
       <div class="widgets">{text:WidgetsSide Code2}</div>
-      {/block:IfSideWidgetsCode2}
+      {/block:IfWidgetsSideCode2}
     </div>
 
   </div>
@@ -484,14 +485,15 @@ _gaq.push(['_trackPageview']);
 </div>
 </div>
 <footer class="footer">
-  {block:IfFootWidgetsCode1}
+  {block:IfWidgetsFootCode1}
   <div class="widgets">{text:WidgetsFoot Code1}</div>
-  {/block:IfFootWidgetsCode1}
+  {/block:IfWidgetsFootCode1}
 <p>&copy; {CopyrightYears} <a href="/" >{Title}</a></p>
 <p>{lang:Powered by Tumblr 2}. | Built with <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap.</a> | <a href="https://github.com/niwaringo/bootstrap-tumblr-theme" target="_blank">Theme by niwaringo</a></p>
-{block:IfFootWidgetsCode2}
+
+{block:IfWidgetsFootCode2}
 <div class="widgets">{text:WidgetsFoot Code2}</div>
-{/block:IfFootWidgetsCode2}
+{/block:IfWidgetsFootCode2}
 </footer>
 
 
