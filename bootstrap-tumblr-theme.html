@@ -8,6 +8,8 @@
 <meta name="text:Google Analytics UA Code" content="" />
 <meta name="text:Widgets Code1" content="" />
 <meta name="text:Widgets Code2" content="" />
+<meta name="text:SideWidgets Code1" content="" />
+<meta name="text:SideWidgets Code2" content="" />
 <meta name="text:Disqus Shortname" content="" />
 <meta name="text:Follow Tumblelog" content="" />
 <meta name="text:Twitter ID" content="" />
@@ -416,7 +418,7 @@ _gaq.push(['_trackPageview']);
     <div class="span2">
       <div id="author">
         <div class="author-name"><a href="{PostAuthorURL}" target="_blank">{PostAuthorTitle}</a></div>
-        <img src="{PortraitURL-128}">
+        <img id="portrait" src="{PortraitURL-128}">
         <div style="clear: both"></div>
 
         {block:IfFollowTumblelog}
@@ -446,6 +448,12 @@ _gaq.push(['_trackPageview']);
         </ul>
         <!-- /social buttons -->
       </div>
+      {block:IfSideWidgetsCode1}
+      <div class="widgets">{text:SideWidgets Code1}</div>
+      {/block:IfSideWidgetsCode1}
+      {block:IfSideWidgetsCode2}
+      <div class="widgets">{text:SideWidgets Code2}</div>
+      {/block:IfSideWidgetsCode2}
     </div>
 
   </div>
