@@ -151,6 +151,43 @@ _gaq.push(['_trackPageview']);
     <div id="blog_title_title">{Title}</div>
     {block:Description}
     <div>{Description}</div>
+    <div>
+      {block:IfFollowTumblelog}
+      <div class="widgets">
+        <iframe class="followtumblelog" frameborder="0" border="0" scrolling="no" allowtransparency="true" height="25" width="114" src="http://platform.tumblr.com/v1/follow_button.html?button_type=2&tumblelog={text:Follow tumblelog}&color_scheme=dark"></iframe>
+      </div>
+      {/block:IfFollowTumblelog}
+
+      {block:IfFollowTwitterButtonName}
+      <div class="widgets">
+        <a href="https://twitter.com/{text:Follow TwitterButtonName}" class="twitter-follow-button" data-show-count="false">Follow @{text:Follow TwitterButtonName}</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+      {/block:IfFollowTwitterButtonName}
+
+      <!-- social buttons -->
+      <ul class="inline">
+        {block:IfShowRSSButton}
+        <li><a href="{RSS}" class="fc-webicon rss" target="_blank">RSS</a></li>
+        {/block:IfShowRSSButton}
+        {block:IfTwitterID}
+        <li><a href="https://twitter.com/{text:Twitter ID}" class="fc-webicon twitter" target="_blank">twitter</a></li>
+        {/block:IfTwitterID}
+        {block:IfGithubID}
+        <li><a href="https://github.com/{text:Github ID}" class="fc-webicon github" target="_blank">github</a></li>
+        {/block:IfGithubID}
+        {block:IfGooglePlusoneID}
+        <li><a href="https://plus.google.com/{text:Google Plusone ID}/posts" class="fc-webicon googleplus" target="_blank">googleplus</a></li>
+        {/block:IfGooglePlusoneID}
+        {block:IfFacebookID}
+        <li><a href="http://www.facebook.com/{text:Facebook ID}" class="fc-webicon facebook" target="_blank">facebook</a></li>
+        {/block:IfFacebookID}
+        {block:IfWordpressURL}
+        <li><a href="{text:Wordpress }" class="fc-webicon wordpress" target="_blank">wordpress</a></li>
+        {/block:IfWordpressURL}
+      </ul>
+      <!-- /social buttons -->        
+    </div>
     {/block:Description}
   </div>
   {/block:IndexPage} 
@@ -420,47 +457,6 @@ _gaq.push(['_trackPageview']);
     </div>
 
     <div class="span2">
-      <div id="author">
-        <div class="widgets">
-          <img id="portrait" src="{PortraitURL-128}">
-        </div>
-
-        {block:IfFollowTumblelog}
-        <div class="widgets">
-          <iframe class="followtumblelog" frameborder="0" border="0" scrolling="no" allowtransparency="true" height="25" width="114" src="http://platform.tumblr.com/v1/follow_button.html?button_type=2&tumblelog={text:Follow tumblelog}&color_scheme=dark"></iframe>
-        </div>
-        {/block:IfFollowTumblelog}
-
-        {block:IfFollowTwitterButtonName}
-        <div class="widgets">
-          <a href="https://twitter.com/{text:Follow TwitterButtonName}" class="twitter-follow-button" data-show-count="false">Follow @{text:Follow TwitterButtonName}</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-        {/block:IfFollowTwitterButtonName}
-
-        <!-- social buttons -->
-        <ul class="inline">
-          {block:IfShowRSSButton}
-          <li><a href="{RSS}" class="fc-webicon rss" target="_blank">RSS</a></li>
-          {/block:IfShowRSSButton}
-          {block:IfTwitterID}
-          <li><a href="https://twitter.com/{text:Twitter ID}" class="fc-webicon twitter" target="_blank">twitter</a></li>
-          {/block:IfTwitterID}
-          {block:IfGithubID}
-          <li><a href="https://github.com/{text:Github ID}" class="fc-webicon github" target="_blank">github</a></li>
-          {/block:IfGithubID}
-          {block:IfGooglePlusoneID}
-          <li><a href="https://plus.google.com/{text:Google Plusone ID}/posts" class="fc-webicon googleplus" target="_blank">googleplus</a></li>
-          {/block:IfGooglePlusoneID}
-          {block:IfFacebookID}
-          <li><a href="http://www.facebook.com/{text:Facebook ID}" class="fc-webicon facebook" target="_blank">facebook</a></li>
-          {/block:IfFacebookID}
-          {block:IfWordpressURL}
-          <li><a href="{text:Wordpress }" class="fc-webicon wordpress" target="_blank">wordpress</a></li>
-          {/block:IfWordpressURL}
-        </ul>
-        <!-- /social buttons -->
-      </div>
       {block:IfWidgetsSideCode1}
       <div class="widgets">{text:WidgetsSide Code1}</div>
       {/block:IfWidgetsSideCode1}
